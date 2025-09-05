@@ -27,7 +27,7 @@ jobs:
     - name: Run bot
       env:
         BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-      run: python Main.py
+      run: python main.py
       timeout-minutes: 330
       continue-on-error: True
 
@@ -40,5 +40,5 @@ jobs:
         git config --global user.name "Ephyryon"
         git add "registered_guilds.json"
         git commit -m "Update JSON data files"
-        git push https://$GH_PAT@github.com/Ephyryon/SQL-Project.git main
+        git push https://$GH_PAT@github.com/Ephyryon/bot-template.git main
       continue-on-error: True

@@ -4,7 +4,7 @@ from bot_managment.bot_setup import bot
 ## Show_roles: Shows all roles with permission to use the supabase commands in your server.
 async def show_roles(ctx, name: str = ""):
     guild_id = str(ctx.guild.id)
-    role_ids = registered_guilds.get(guild_id, {}).get("database_role_perms", [])
+    role_ids = registered_guilds.get(guild_id, {}).get("role_perms", [])
     if bot.user.name == name:
         if role_ids:
             # Convert role IDs to role names

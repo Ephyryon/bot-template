@@ -45,7 +45,7 @@ async def on_ready(): # This runs automatically when your bot starts.
 ## on_guild_join: This event runs whenever the bot is added to a guild.
 @bot.event
 async def on_guild_join(guild):
-    registered_guilds[str(guild.id)] = {"database_role_perms": []} # Adds the guild to it's register.
+    registered_guilds[str(guild.id)] = {"role_perms": []} # Adds the guild to it's register.
     print(f"Added guild {guild.name} ({guild.id}) to registered_guilds.")
     print(registered_guilds)
 

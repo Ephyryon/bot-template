@@ -6,8 +6,8 @@ async def add_role(ctx, role: discord.Role):
     guild_id = str(ctx.guild.id)
     if guild_id not in registered_guilds:
         registered_guilds[guild_id] = []
-    if role.id not in registered_guilds[guild_id]["database_role_perms"]:
-        registered_guilds[guild_id]["database_role_perms"].append(role.id)
+    if role.id not in registered_guilds[guild_id]["role_perms"]:
+        registered_guilds[guild_id]["role_perms"].append(role.id)
         register_role_with_guild()
         await ctx.send(f"Added role {role.name} ({role.id}) to the list.")
     else:

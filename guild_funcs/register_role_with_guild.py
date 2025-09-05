@@ -7,6 +7,6 @@ if os.path.exists("registered_guilds.json"):
 else:
     registered_guilds = {}
 
-def register_role_with_guild(guild_id, role_id):
+def register_role_with_guild():
     with open("registered_guilds.json", "w") as f:
         json.dump(registered_guilds, f, indent=4) # Dumps the python dictionary into the json file.

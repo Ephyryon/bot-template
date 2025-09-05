@@ -4,7 +4,7 @@ def has_correct_roles(ctx, registered_guilds):
     guild_id = str(ctx.guild.id)
     
     # Retrieve the set of role IDs associated with the guild from registered_guilds
-    role_ids = set(registered_guilds.get(guild_id, {}).get("database_role_perms", []))
+    role_ids = set(registered_guilds.get(guild_id, {}).get("role_perms", []))
     
     # Get the set of role IDs that the user has
     user_roles = {role.id for role in ctx.author.roles}

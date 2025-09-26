@@ -63,21 +63,21 @@ async def on_guild_remove(guild):
 
 
 ### Guild admin commands
-## Add_role: Adds roles that gain a permit to use the supabase discord bot commands. !!!ONLY USABLE BY THE GUILD/GROUP OWNER!!!
+## Add_role: Adds roles that then gain permission to use commands locked off by the has_correct_roles function.
 import guild_admin_funcs.add_role
 @bot.command(name="add_role")
 @guild_owner_only()
 async def add_role(ctx, role: discord.Role, name: str = ""):
     await guild_admin_funcs.add_role.add_role(ctx, role, name)
 
-## Remove_role: Removes roles from the permission list removing their admin priviliges over the bot.
+## Remove_role: Removes roles from the permission list removing their command privileges.
 import guild_admin_funcs.remove_role
 @bot.command(name="remove_role")
 @guild_owner_only()
 async def add_role(ctx, role: discord.Role, name: str = ""):
     await guild_admin_funcs.remove_role.remove_role(ctx, role, name)
 
-## Show_roles: Shows all roles with permission to use the supabase commands in your server.
+## Show_roles: Shows all roles with command privileges.
 import guild_admin_funcs.show_roles
 @bot.command(name="show_roles")
 @guild_owner_only()
